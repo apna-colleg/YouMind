@@ -500,8 +500,8 @@ textarea::placeholder {
 }
 
 .sidebar-nav-item.active {
-  background: var(--color-accent-muted);
-  color: var(--color-accent-text);
+  background: var(--color-bg-active);
+  color: var(--color-text-primary);
 }
 
 .sidebar-nav-item .count {
@@ -583,8 +583,8 @@ textarea::placeholder {
 }
 
 .note-list-item.active {
-  background: var(--color-accent-muted);
-  border-left-color: var(--color-accent);
+  background: var(--color-bg-active);
+  border-left-color: transparent;
 }
 
 .note-list-item-title {
