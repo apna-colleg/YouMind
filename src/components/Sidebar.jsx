@@ -145,6 +145,18 @@ export default function Sidebar({ isOpen, onToggle, onClose, isMobile }) {
             >
               <Search size={16} />
               Search
+              <span style={{
+                marginLeft: 'auto',
+                fontSize: '10px',
+                color: 'var(--color-text-muted)',
+                background: 'var(--color-bg-primary)',
+                padding: '2px 4px',
+                borderRadius: 'var(--radius-sm)',
+                border: '1px solid var(--color-border)',
+                fontFamily: 'var(--font-sans)',
+                fontWeight: '500',
+                letterSpacing: '0.5px'
+              }}>⌘K</span>
             </div>
             <div
               className="sidebar-nav-item"
