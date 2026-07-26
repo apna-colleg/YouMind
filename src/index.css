@@ -568,23 +568,26 @@ textarea::placeholder {
 /* ─────────────── Note List Item ─────────────── */
 .note-list-item {
   display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-  padding: var(--space-3) var(--space-3);
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px var(--space-3);
   margin: 1px var(--space-2);
   border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
   cursor: pointer;
   transition: all var(--transition-fast);
-  border-left: 2px solid transparent;
+  user-select: none;
 }
 
 .note-list-item:hover {
   background: var(--color-bg-hover);
+  color: var(--color-text-primary);
 }
 
 .note-list-item.active {
   background: var(--color-bg-active);
-  border-left-color: transparent;
+  color: var(--color-text-primary);
 }
 
 .note-list-item-title {

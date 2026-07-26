@@ -1,9 +1,6 @@
-import { getPlainText } from '../services/searchService';
+import { FileText } from 'lucide-react';
 
 export default function NoteListItem({ note, isActive, onClick, onContextMenu }) {
-  const preview = getPlainText(note.content);
-  const timeAgo = formatTimeAgo(note.updated_at);
-
   return (
     <div
       className={`note-list-item ${isActive ? 'active' : ''}`}
@@ -13,15 +10,10 @@ export default function NoteListItem({ note, isActive, onClick, onContextMenu })
       tabIndex={0}
       onKeyDown={(e) => e.key === 'Enter' && onClick(note.id)}
     >
-      <span className="note-list-item-title">
+      <FileText size={16} />
+      <span className="note-list-item-title" style={{ flex: 1, textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
         {note.is_pinned && '📌 '}
         {note.title || 'Untitled'}
-      </span>
-      {preview && (
-        <span className="note-list-item-preview">{preview}</span>
-      )}
-      <span className="note-list-item-meta">
-        <span>{timeAgo}</span>
       </span>
     </div>
   );
