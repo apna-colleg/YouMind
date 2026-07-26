@@ -100,11 +100,11 @@ export default function LandingPage() {
       </header>
 
       {/* Logos Section */}
-      <section className="notion-logos-section">
+      <section className="notion-logos-section" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <p className="notion-logos-title" style={{ display: 'none' }}>Trusted by 98% of the Forbes Cloud 100</p>
         
-        <div style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center', padding: '0 24px' }}>
-          <img src="/companies-logo.png" alt="Trusted by companies" style={{ maxWidth: '100%', height: 'auto', display: 'block', margin: '0 auto' }} />
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', maxWidth: '1000px', margin: '0 auto', padding: '0 24px' }}>
+          <img src="/companies-logo.png" alt="Trusted by companies" style={{ maxWidth: '100%', height: 'auto', objectFit: 'contain' }} />
         </div>
       </section>
 
