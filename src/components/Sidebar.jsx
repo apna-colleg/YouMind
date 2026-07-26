@@ -15,6 +15,8 @@ import {
   LogOut,
   ChevronDown,
   ChevronRight,
+  MoreHorizontal,
+  Library,
 } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useNotes } from '../contexts/NotesContext';
@@ -39,6 +41,7 @@ export default function Sidebar({ isOpen, onToggle, onClose, isMobile }) {
   const navigate = useNavigate();
   const location = useLocation();
   const [tagsExpanded, setTagsExpanded] = useState(true);
+  const [privateExpanded, setPrivateExpanded] = useState(true);
   const [contextMenu, setContextMenu] = useState(null);
 
   const pinnedCount = notes.filter((n) => n.is_pinned && !n.is_archived).length;
@@ -251,39 +254,64 @@ export default function Sidebar({ isOpen, onToggle, onClose, isMobile }) {
             )}
           </div>
 
-          {/* Note List */}
+          {/* Private Note List */}
           <div className="sidebar-section">
-            <div className="sidebar-section-title">
-              <Clock size={12} />
-              {filter === 'pinned' ? 'Pinned Notes' :
-                filter === 'archived' ? 'Archived Notes' :
-                  filter === 'all' ? 'Recent' : 'Tagged'}
+            <div
+              className="sidebar-section-title private-section-title"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: 'var(--space-1) var(--space-2)',
+                cursor: 'pointer',
+                color: 'var(--color-text-secondary)',
+                fontWeight: '600',
+                fontSize: '12px',
+                textTransform: 'none',
+                letterSpacing: 'normal'
+              }}
+              onClick={() => setPrivateExpanded(!privateExpanded)}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                Private {privateExpanded ? <ChevronDown size={14} color="var(--color-text-muted)" /> : <ChevronRight size={14} color="var(--color-text-muted)" />}
+              </div>
+              <div
+                style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-text-muted)' }}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <Library size={14} style={{ cursor: 'pointer', opacity: 0.8 }} />
+                <MoreHorizontal size={14} style={{ cursor: 'pointer', opacity: 0.8 }} />
+                <Plus size={14} style={{ cursor: 'pointer', opacity: 0.8 }} onClick={handleNewNote} />
+              </div>
             </div>
-            <div className="sidebar-note-list">
-              {filteredNotes
-                .filter((v, i, a) => a.findIndex(t => (t.title || 'Untitled') === (v.title || 'Untitled')) === i)
-                .map((note) => (
-                <NoteListItem
-                  key={note.id}
-                  note={note}
-                  isActive={note.id === activeNoteId}
-                  onClick={handleNoteClick}
-                  onContextMenu={handleContextMenu}
-                />
-              ))}
-              {filteredNotes.length === 0 && (
-                <div
-                  style={{
-                    padding: 'var(--space-4) var(--space-3)',
-                    fontSize: 'var(--text-xs)',
-                    color: 'var(--color-text-muted)',
-                    textAlign: 'center',
-                  }}
-                >
-                  No notes found
-                </div>
-              )}
-            </div>
+
+            {privateExpanded && (
+              <div className="sidebar-note-list">
+                {filteredNotes
+                  .filter((v, i, a) => a.findIndex(t => (t.title || 'Untitled') === (v.title || 'Untitled')) === i)
+                  .map((note) => (
+                  <NoteListItem
+                    key={note.id}
+                    note={note}
+                    isActive={note.id === activeNoteId}
+                    onClick={handleNoteClick}
+                    onContextMenu={handleContextMenu}
+                  />
+                ))}
+                {filteredNotes.length === 0 && (
+                  <div
+                    style={{
+                      padding: 'var(--space-2) var(--space-3)',
+                      marginLeft: 'var(--space-2)',
+                      fontSize: 'var(--text-xs)',
+                      color: 'var(--color-text-muted)',
+                    }}
+                  >
+                    No pages inside
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </nav>
 
