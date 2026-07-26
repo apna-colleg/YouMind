@@ -179,11 +179,10 @@ export async function findNoteByTitle(userId, title) {
     .select('id, title')
     .eq('user_id', userId)
     .ilike('title', title)
-    .limit(1)
-    .single();
+    .limit(1);
 
-  if (error && error.code !== 'PGRST116') throw error; // PGRST116 = no rows
-  return data;
+  if (error) throw error;
+  return data?.[0] || null;
 }
 
 export async function findOrCreateNoteByTitle(userId, title) {

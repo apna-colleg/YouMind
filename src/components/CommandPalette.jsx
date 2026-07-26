@@ -61,9 +61,14 @@ export default function CommandPalette() {
   }, [open]);
 
   // Build results
-  const noteResults = query
-    ? fuzzySearch(notes, query).slice(0, 6)
-    : notes.filter((n) => !n.is_archived).slice(0, 6);
+  const rawNotes = query
+    ? fuzzySearch(notes, query)
+    : notes.filter((n) => !n.is_archived);
+
+  // Deduplicate by title to only show different notes
+  const noteResults = rawNotes.filter((v, i, a) => 
+    a.findIndex(t => (t.title || 'Untitled') === (v.title || 'Untitled')) === i
+  ).slice(0, 6);
 
   const tagResults = query
     ? tags.filter((t) => t.name.toLowerCase().includes(query.toLowerCase())).slice(0, 3)

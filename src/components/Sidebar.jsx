@@ -248,7 +248,9 @@ export default function Sidebar({ isOpen, onToggle, onClose, isMobile }) {
                   filter === 'all' ? 'Recent' : 'Tagged'}
             </div>
             <div className="sidebar-note-list">
-              {filteredNotes.map((note) => (
+              {filteredNotes
+                .filter((v, i, a) => a.findIndex(t => (t.title || 'Untitled') === (v.title || 'Untitled')) === i)
+                .map((note) => (
                 <NoteListItem
                   key={note.id}
                   note={note}
