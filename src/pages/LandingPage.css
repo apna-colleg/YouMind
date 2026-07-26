@@ -388,6 +388,18 @@
   margin-top: 32px;
 }
 
+.logo-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot-separator {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
 /* Common Section Styles */
 .notion-section {
   max-width: 1100px;

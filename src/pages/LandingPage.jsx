@@ -101,27 +101,99 @@ export default function LandingPage() {
 
       {/* Logos Section */}
       <section className="notion-logos-section">
-        <p className="notion-logos-title">Trusted by 98% of the Forbes Cloud 100</p>
-        <div className="notion-logos-grid">
-          <span>OpenAI</span>
-          <span>Figma</span>
-          <span>ramp ⊿</span>
-          <span>CURSOR</span>
-          <span>▲ Vercel</span>
-          <span>NVIDIA</span>
-          <span>V O L V O</span>
-          <span>L'ORÉAL</span>
-          <span>Discord</span>
+        <p className="notion-logos-title" style={{ display: 'none' }}>Trusted by 98% of the Forbes Cloud 100</p>
+        
+        <div className="notion-logos-grid" style={{ gap: '32px', marginBottom: '24px' }}>
+          <span className="logo-item" style={{ fontFamily: 'sans-serif', fontWeight: 700, fontSize: '20px' }}>OpenAI</span>
+          <span className="dot-separator" style={{ color: '#aaa', fontSize: '24px' }}>·</span>
+          
+          <span className="logo-item" style={{ fontFamily: 'sans-serif', fontWeight: 500, fontSize: '22px' }}>Figma</span>
+          <span className="dot-separator" style={{ color: '#aaa', fontSize: '24px' }}>·</span>
+          
+          <span className="logo-item" style={{ fontFamily: 'sans-serif', fontWeight: 600, fontSize: '20px' }}>ramp <span style={{ fontSize: '18px', fontWeight: 900 }}>⊿</span></span>
+          <span className="dot-separator" style={{ color: '#aaa', fontSize: '24px' }}>·</span>
+          
+          <span className="logo-item" style={{ fontFamily: 'sans-serif', fontWeight: 800, fontSize: '16px', letterSpacing: '1px' }}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'rotate(-45deg)' }}><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+            CURSOR
+          </span>
+          <span className="dot-separator" style={{ color: '#aaa', fontSize: '24px' }}>·</span>
+          
+          <span className="logo-item" style={{ fontFamily: 'sans-serif', fontWeight: 700, fontSize: '22px', letterSpacing: '-0.5px' }}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 22h20L12 2z"/></svg>
+            Vercel
+          </span>
+          <span className="dot-separator" style={{ color: '#aaa', fontSize: '24px' }}>·</span>
+          
+          <span className="logo-item" style={{ fontFamily: 'Arial, sans-serif', fontWeight: 900, fontSize: '20px', letterSpacing: '0.5px', fontStyle: 'italic' }}>
+            <span style={{ background: '#000', color: '#fff', padding: '0 4px', borderRadius: '2px', marginRight: '4px', fontStyle: 'normal' }}>NV</span>
+            NVIDIA
+          </span>
+          
+          <span className="logo-item" style={{ fontFamily: 'sans-serif', fontWeight: 800, fontSize: '14px', letterSpacing: '6px', marginLeft: '16px' }}>
+            V O L V O
+          </span>
+          
+          <span className="logo-item" style={{ fontFamily: 'sans-serif', fontWeight: 400, fontSize: '20px', letterSpacing: '2px', marginLeft: '16px' }}>
+            L'ORÉAL
+          </span>
+          
+          <span className="logo-item" style={{ fontFamily: 'sans-serif', fontWeight: 800, fontSize: '18px', marginLeft: '16px' }}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.33-.35-.76-.53-1.09a.09.09 0 0 0-.07-.03c-1.5.26-2.94.71-4.27 1.33a.08.08 0 0 0-.05.05C2.79 11.5 2.05 17.31 2.85 23a.08.08 0 0 0 .04.06c1.78 1.32 3.51 2.11 5.2 2.65a.09.09 0 0 0 .1-.03c.4-.55.77-1.13 1.1-1.74a.09.09 0 0 0-.04-.12c-.56-.21-1.1-.47-1.61-.75a.09.09 0 0 1-.01-.15c.11-.08.22-.17.33-.25a.08.08 0 0 1 .08-.01c3.42 1.56 7.12 1.56 10.5 0a.08.08 0 0 1 .09.01c.11.08.22.17.33.26a.09.09 0 0 1-.01.15c-.52.28-1.06.54-1.62.75a.09.09 0 0 0-.04.12c.33.61.7 1.19 1.1 1.74a.09.09 0 0 0 .1.03c1.7-.54 3.43-1.33 5.21-2.65a.08.08 0 0 0 .04-.06c.86-6.19-.18-11.83-1.92-17.62a.08.08 0 0 0-.05-.05zM8.02 15.33c-1.18 0-2.15-1.08-2.15-2.41s.95-2.41 2.15-2.41c1.21 0 2.17 1.09 2.15 2.41 0 1.33-.95 2.41-2.15 2.41zm7.97 0c-1.18 0-2.15-1.08-2.15-2.41s.95-2.41 2.15-2.41c1.21 0 2.17 1.09 2.15 2.41 0 1.33-.95 2.41-2.15 2.41z"/></svg>
+            Discord
+          </span>
         </div>
-        <div className="notion-logos-grid row-2">
-          <span>♥ Lovable</span>
-          <span>1Password</span>
-          <span>affirm</span>
-          <span>RIOT GAMES</span>
-          <span>clay</span>
-          <span>remote</span>
-          <span>F A I R E</span>
-          <span>TOYOTA</span>
+        
+        <div className="notion-logos-grid row-2" style={{ gap: '32px' }}>
+          <span className="logo-item" style={{ fontFamily: 'sans-serif', fontWeight: 800, fontSize: '20px', letterSpacing: '-0.5px' }}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            Lovable
+          </span>
+          
+          <span className="logo-item" style={{ fontFamily: 'sans-serif', fontWeight: 700, fontSize: '18px', letterSpacing: '-0.5px' }}>
+            <span style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '22px', height: '22px', background: '#000', color: '#fff', borderRadius: '50%', fontSize: '12px' }}>1</span>
+            1Password
+          </span>
+          
+          <span className="logo-item" style={{ fontFamily: 'sans-serif', fontWeight: 800, fontSize: '22px', letterSpacing: '-1px' }}>
+            affirm
+          </span>
+          
+          <span className="logo-item" style={{ fontFamily: 'sans-serif', fontWeight: 900, fontSize: '16px', letterSpacing: '-0.5px', lineHeight: 1 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+              <div style={{ display: 'flex', gap: '2px', alignItems: 'flex-end', height: '24px' }}>
+                <div style={{ width: '4px', height: '12px', background: '#000' }}></div>
+                <div style={{ width: '4px', height: '18px', background: '#000' }}></div>
+                <div style={{ width: '4px', height: '24px', background: '#000' }}></div>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
+                <span>RIOT</span>
+                <span>GAMES</span>
+              </div>
+            </div>
+          </span>
+          
+          <span className="logo-item" style={{ fontFamily: 'sans-serif', fontWeight: 800, fontSize: '22px', letterSpacing: '-1px' }}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style={{ marginRight: '4px' }}><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-2-15a5 5 0 0 0-5 5h2a3 3 0 0 1 3-3V7zm4 0v2a3 3 0 0 1 3 3h2a5 5 0 0 0-5-5z"/></svg>
+            clay
+          </span>
+          <span className="dot-separator" style={{ color: '#aaa', fontSize: '24px' }}>·</span>
+          
+          <span className="logo-item" style={{ fontFamily: 'sans-serif', fontWeight: 700, fontSize: '20px', letterSpacing: '-0.5px' }}>
+            <span style={{ fontWeight: 900, fontSize: '24px', marginRight: '4px' }}>r</span>
+            remote
+          </span>
+          <span className="dot-separator" style={{ color: '#aaa', fontSize: '24px' }}>·</span>
+          
+          <span className="logo-item" style={{ fontFamily: 'serif', fontWeight: 400, fontSize: '16px', letterSpacing: '6px' }}>
+            F A I R E
+          </span>
+          <span className="dot-separator" style={{ color: '#aaa', fontSize: '24px' }}>·</span>
+          
+          <span className="logo-item" style={{ fontFamily: 'sans-serif', fontWeight: 900, fontSize: '20px', letterSpacing: '1px' }}>
+            TOYOTA
+          </span>
+          <span className="dot-separator" style={{ color: '#aaa', fontSize: '24px' }}>·</span>
         </div>
       </section>
 
