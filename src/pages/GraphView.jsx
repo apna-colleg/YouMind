@@ -170,7 +170,7 @@ export default function GraphView() {
           .attr('stroke', 'var(--color-graph-edge)');
       })
       .on('click', function (event, d) {
-        navigate(`/note/${d.id}`);
+        navigate(`/app/note/${d.id}`);
       });
 
     // Tick
@@ -213,7 +213,7 @@ export default function GraphView() {
   return (
     <div className="graph-view" ref={containerRef}>
       {/* Back button */}
-      <button className="graph-back-btn" onClick={() => navigate('/')}>
+      <button className="graph-back-btn" onClick={() => navigate('/app')}>
         <ArrowLeft size={16} />
         Back to notes
       </button>

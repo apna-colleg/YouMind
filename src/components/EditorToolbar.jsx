@@ -145,7 +145,7 @@ export default function EditorToolbar({ editor }) {
   ];
 
   return (
-    <div className="notion-toolbar">
+    <div className="notion-toolbar" onMouseDown={(e) => e.preventDefault()}>
       {/* Text Type Dropdown */}
       <div className="toolbar-dropdown" ref={textMenuRef}>
         <button

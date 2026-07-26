@@ -181,6 +181,8 @@ export default function Editor() {
     }
   };
 
+  const [, setEditorTick] = useState(0);
+
   // Tiptap editor instance
   const editor = useEditor({
     extensions: [
@@ -212,6 +214,12 @@ export default function Editor() {
     onUpdate: ({ editor }) => {
       const json = editor.getJSON();
       debouncedSave(json);
+    },
+    onSelectionUpdate: () => {
+      setEditorTick((t) => t + 1);
+    },
+    onTransaction: () => {
+      setEditorTick((t) => t + 1);
     },
     editorProps: {
       attributes: {
